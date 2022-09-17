@@ -10,7 +10,7 @@ local gls = gl.section
 
 local themes_match = {
     gruvbox = "#261C00",
-    everforest = "#282E2C",
+    catppuccin = "#585b70",
     deus = "#16191D",
 }
 
@@ -115,7 +115,7 @@ end
 local function insert_blank_line_at_left()
 insert_left {
   Space = {
-    provider = function () return ' ' end,
+    provider = function () return ' ' end,
     highlight = {colors.line_bg,colors.line_bg}
   }
 }
@@ -210,7 +210,7 @@ insert_blank_line_at_left()
 
 insert_left{
   Separa = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     highlight = {colors.line_bg, },
   }
 }
@@ -220,7 +220,7 @@ insert_left{
 -- {information panel start
 insert_left{
   Start = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     highlight = {colors.line_bg,}
   }
 }
@@ -360,7 +360,7 @@ insert_left {
 
 insert_left{
   Separa = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     highlight = {colors.line_bg, },
   }
 }
@@ -368,7 +368,7 @@ insert_left{
 
 insert_right{
   Start = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     highlight = {colors.line_bg,}
   }
 }
@@ -419,7 +419,7 @@ insert_blank_line_at_right()
 
 insert_right{
   Separa = {
-    provider = function() return '' end,
+    provider = function() return ' ' end,
     highlight = {colors.line_bg, },
   }
 }
@@ -455,18 +455,18 @@ require ('galaxyline').section.short_line_left = {
         local name = BufferTypeMap[vim.bo.filetype] or ' Editor'
         return string.format('  %s', name)
       end,
-      separator = '',
+      separator = ' ',
       separator_highlight = {colors.line_bg, colors.dark}
     }
   },
   {
     ShortLineLeftWindowNumber = {
-      highlight = {colors.cyan, colors.dark},
+      highlight = {colors.dark, colors.dark},
       provider = function()
         return ' ' .. vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
       end,
-      separator = '',
-      separator_highlight = {colors.dark, "#0c0e17"}
+      separator = ' ',
+      separator_highlight = {"#2e3036", "#181825"}
     }
   }
 }
