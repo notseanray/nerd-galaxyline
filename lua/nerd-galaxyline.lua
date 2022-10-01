@@ -11,13 +11,16 @@ local gls = gl.section
 local themes_match = {
     gruvbox = "#261C00",
     catppuccin = "#585b70",
+    gruvboxlight = "#fbf1c7",
     deus = "#16191D",
 }
 
-local line_bg_color = themes_match[vim.g.colors_name]
+local theme = "gruvboxlight"
+
+local line_bg_color = themes_match[theme]
 
 local colors = {
-    bg       = '#5C687A',
+    bg       = themes_match[theme],
     line_bg  = line_bg_color,
     fg       = '#8FBCBB',
     fg_green = '#65a380',
@@ -437,7 +440,7 @@ require ('galaxyline').section.short_line_left = {
         local BufferTypeMap = {
           ['Mundo'] = 'Mundo History',
           ['MundoDiff'] = 'Mundo Diff',
-          ['NvimTree'] = ' Tree',
+          ['NvimTree'] = ':)',
           ['fugitive'] = ' Fugitive',
           ['fugitiveblame'] = ' Fugitive Blame',
           ['help'] = ' Help',
@@ -463,10 +466,10 @@ require ('galaxyline').section.short_line_left = {
     ShortLineLeftWindowNumber = {
       highlight = {colors.dark, colors.dark},
       provider = function()
-        return ' ' .. vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
+        return '' .. vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
       end,
       separator = ' ',
-      separator_highlight = {"#2e3036", "#181825"}
+      separator_highlight = {themes_match[theme], themes_match[theme]}
     }
   }
 }
