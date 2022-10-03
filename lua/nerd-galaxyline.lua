@@ -9,13 +9,13 @@ local gls = gl.section
 -- VistaPlugin = extension.vista_nearest
 
 local themes_match = {
-    gruvbox = "#261C00",
+    gruvbox = "#0f101a",
     catppuccin = "#585b70",
     gruvboxlight = "#fbf1c7",
     deus = "#16191D",
 }
 
-local theme = "gruvboxlight"
+local theme = "gruvbox"
 
 local line_bg_color = themes_match[theme]
 
